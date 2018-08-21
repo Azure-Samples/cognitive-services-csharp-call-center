@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="CallCenterSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CallCenterSample.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="657" Width="1053">
+
+    <Grid>
+        <local:SpeechToTextControl x:Name="STTControls" HorizontalAlignment="Left" Height="303" Margin="95,56,0,0" VerticalAlignment="Top" Width="376"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="38" Margin="502,113,0,0" TextWrapping="Wrap" Text="Language detected:" VerticalAlignment="Top" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Height="29" Margin="497,193,0,0" TextWrapping="Wrap" Text="Caller text:" VerticalAlignment="Top" Width="80"/>
+        <TextBlock HorizontalAlignment="Left" Height="29" Margin="497,339,0,0" TextWrapping="Wrap" Text="Key phrases:" VerticalAlignment="Top" Width="99"/>
+        <TextBox x:Name="DetectedLanguageBox" HorizontalAlignment="Left" Height="29" Margin="595,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="160" IsReadOnly="True"/>
+        <TextBox x:Name="CallerTextBox" TextChanged="CallerTextBoxTextChanged" HorizontalAlignment="Left" Height="97" Margin="595,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="356" IsReadOnly="True"/>
+        <ListView x:Name="KeyPhrasesListView" ItemsSource="{Binding KeyPhrases}" BorderThickness="2" HorizontalAlignment="Left" Height="228" Margin="595,339,0,0" VerticalAlignment="Top" Width="356" BorderBrush="#66000000" SelectionMode="Extended" />
+
+        <HyperlinkButton Content="Settings" Margin="112,519,0,0" Click="SettingsClicked" HorizontalAlignment="Left" VerticalAlignment="Top" />
+    </Grid>
+</Page>
