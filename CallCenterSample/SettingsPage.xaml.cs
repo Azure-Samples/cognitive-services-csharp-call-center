@@ -70,7 +70,7 @@ namespace CallCenterSample
                 });
         }
 
-        private void OnCloseClick(object sender, RoutedEventArgs e)
+        private void OnBackClick(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
         }

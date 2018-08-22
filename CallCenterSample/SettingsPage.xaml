@@ -23,7 +23,6 @@
                 <StackPanel >
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Keys" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                        <HyperlinkButton Margin="6,0,0,0" VerticalAlignment="Bottom" NavigateUri="https://azure.microsoft.com/en-us/try/cognitive-services/">Click here if you need keys</HyperlinkButton>
                     </StackPanel>
 
                     <Grid Margin="0,10,0,0">
@@ -37,7 +36,7 @@
 
                     <PasswordBox Header="Translator Text API Key" Password="{Binding TranslatorTextApiKey, Mode=TwoWay}" Margin="0,10,0,0" />
 
-                    <HyperlinkButton Content="Close" Click="OnCloseClick" />
+                    <HyperlinkButton Content="Back" Click="OnBackClick" />
 
                 </StackPanel>
 
