@@ -37,7 +37,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CallCenterSample
+namespace CallCenterSample.Helpers
 {
     public static class ErrorTrackingHelper
     {
