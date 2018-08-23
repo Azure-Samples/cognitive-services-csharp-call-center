@@ -85,7 +85,7 @@ namespace CallCenterSample.Helpers
             {
                 AnalyticsClient = new TextAnalyticsClient(new ApiKeyServiceClientCredentials())
                 {
-                    Endpoint = string.Format("https://{0}.api.cognitive.microsoft.com/", ApiKeyRegion)
+                    Endpoint = string.Format("https://{0}.api.cognitive.microsoft.com", ApiKeyRegion)
                 };
             }
         }
@@ -103,17 +103,17 @@ namespace CallCenterSample.Helpers
             }
         }
 
-        public static DetectLanguageResult GetDetectedLanguageAsync(string input)
+        public static async Task<DetectLanguageResult> GetDetectedLanguageAsync(string input)
         {
             DetectLanguageResult languageResult = new DetectLanguageResult() { Language = new Dictionary<string, string>() };
 
             if (!string.IsNullOrEmpty(input))
             {
-                LanguageBatchResult result = AnalyticsClient.DetectLanguageAsync(new BatchInput(
+                LanguageBatchResult result = await AnalyticsClient.DetectLanguageAsync(new BatchInput(
                     new List<Input>()
                     {
                         new Input("0", input)
-                    })).Result;
+                    }));
 
                 if (result.Documents != null)
                 {
@@ -131,17 +131,17 @@ namespace CallCenterSample.Helpers
             return languageResult;
         }
 
-        public static SentimentResult GetTextSentimentAsync(string input, string language = "en")
+        public static async Task<SentimentResult> GetTextSentimentAsync(string input, string language = "en")
         {
             SentimentResult sentimentResult = new SentimentResult() { Score = 0.5 };
 
             if (!string.IsNullOrEmpty(input))
             {
-                SentimentBatchResult result = AnalyticsClient.SentimentAsync(new MultiLanguageBatchInput(
+                SentimentBatchResult result = await AnalyticsClient.SentimentAsync(new MultiLanguageBatchInput(
                     new List<MultiLanguageInput>()
                     {
                         new MultiLanguageInput(language, "0", input)
-                    })).Result;
+                    }));
 
                 if (result.Documents != null)
                 {
@@ -157,17 +157,17 @@ namespace CallCenterSample.Helpers
             return sentimentResult;
         }
 
-        public static KeyPhrasesResult GetKeyPhrasesAsync(string input, string language = "en")
+        public static async Task<KeyPhrasesResult> GetKeyPhrasesAsync(string input, string language = "en")
         {
             KeyPhrasesResult keyPhrasesResult = new KeyPhrasesResult() { KeyPhrases = Enumerable.Empty<string>() };
 
             if (!string.IsNullOrEmpty(input))
             {
-                KeyPhraseBatchResult result = AnalyticsClient.KeyPhrasesAsync(new MultiLanguageBatchInput(
+                KeyPhraseBatchResult result = await AnalyticsClient.KeyPhrasesAsync(new MultiLanguageBatchInput(
                     new List<MultiLanguageInput>()
                     {
                         new MultiLanguageInput(language, "0", input)
-                    })).Result;
+                    }));
 
                 if (result.Documents != null)
                 {

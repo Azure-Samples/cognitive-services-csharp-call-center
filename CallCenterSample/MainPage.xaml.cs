@@ -70,7 +70,7 @@ namespace CallCenterSample
         {
             try
             {
-                KeyPhrasesResult keyPhrasesResult = TextAnalyticsHelper.GetKeyPhrasesAsync(this.CallerTextBox.Text);
+                KeyPhrasesResult keyPhrasesResult = await TextAnalyticsHelper.GetKeyPhrasesAsync(this.CallerTextBox.Text);
                 this.KeyPhrases.AddRange(keyPhrasesResult.KeyPhrases.OrderBy(i => i));
             }
             catch (Exception ex)

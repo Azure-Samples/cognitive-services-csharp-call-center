@@ -243,7 +243,7 @@ namespace CallCenterSample.Controls
             {
                 if (!string.IsNullOrEmpty(this.speechRecognitionTextBox.Text))
                 {
-                    DetectLanguageResult textDetectResult = TextAnalyticsHelper.GetDetectedLanguageAsync(this.speechRecognitionTextBox.Text);
+                    DetectLanguageResult textDetectResult = await TextAnalyticsHelper.GetDetectedLanguageAsync(this.speechRecognitionTextBox.Text);
                     this.detectedLanguage = new string[] { textDetectResult.Language["iso6391Name"], textDetectResult.Language["name"] };
                 }
                 else
@@ -283,7 +283,7 @@ namespace CallCenterSample.Controls
             {
                 if (!string.IsNullOrEmpty(this.speechRecognitionTextBox.Text))
                 {
-                    SentimentResult textAnalysisResult = TextAnalyticsHelper.GetTextSentimentAsync(this.translatedText, this.detectedLanguage[0]);
+                    SentimentResult textAnalysisResult = await TextAnalyticsHelper.GetTextSentimentAsync(this.translatedText, this.detectedLanguage[0]);
                     this.sentimentControl.Sentiment = textAnalysisResult.Score;
                 }
                 else
