@@ -38,7 +38,7 @@ namespace CallCenterSample
             // just ensure that the window is active
             if (rootFrame == null)
             {
-                // propogate settings to the core library
+                // propagate settings to the core library
                 SettingsHelper.Instance.SettingsChanged += (target, args) =>
                 {
                     TextAnalyticsHelper.ApiKey = SettingsHelper.Instance.TextAnalyticsApiKey;

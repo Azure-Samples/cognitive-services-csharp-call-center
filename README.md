@@ -39,6 +39,7 @@ Due to the use of Windows 10's voice input features, you'll also need to make a 
     1. `git clone https://github.com/Azure-Samples/cognitive-services-dotnet-call-center.git`
     1. `cd cognitive-services-dotnet-call-center`
 1. Double-click `CallCenterSample.sln` to open the solution in Visual Studio
+1. Ensure that the platform the solution is building for is set to `x64`
 
 ## Demo
 
@@ -46,7 +47,7 @@ To run the sample, follow these steps:
 
 1. Run the project from Visual Studio
 2. On the main page, click **Settings** so that you can enter your API keys and region info, and then click **Close**
-3. On the main page, click the microphone button to begin listening for speech; when you're done speaking, click the stop button so that the text representation of your speech can be tested for source language (and translated to English if necessary) and emotion, and parsed for key terms and phrases
+3. On the main page, click the microphone button so that the app begins listening for speech; when you're done speaking, click the stop button so that the text representation of your speech can be tested for source language (and translated to English if necessary) and emotion, and parsed for key terms and phrases
 4. Click the reset button to begin the process again
 
 ## Resources
