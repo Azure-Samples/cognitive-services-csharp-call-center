@@ -1,5 +1,5 @@
 ---
-services: text-analytics, translator-text
+services: cognitive-services, text-analytics, translator-text
 platforms: dotnet
 author: v-stadam
 ---
