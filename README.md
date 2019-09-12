@@ -1,8 +1,13 @@
 ---
-services: cognitive-services, text-analytics, translator-text
-platforms: dotnet
-author: v-stadam
+page_type: sample
+languages:
+- csharp
+products:
+- azure
+description: "This sample is a basic mock-up for a call center app that takes a customer's spoken request, converts it to text, translates it to English (if necessary), gauges the emotion behind the text, and then parses it for key phrases."
+urlFragment: cognitive-services-csharp-call-center
 ---
+
 # Call Center First Contact
 
 This sample is a basic mock-up for a call center app that takes a customer's spoken request, converts it to text, translates it to English (if necessary), gauges the emotion behind the text, and then parses it for key phrases. This data could be used to assist in routing the call to a:
