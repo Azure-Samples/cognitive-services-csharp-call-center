@@ -4,8 +4,8 @@ languages:
 - csharp
 products:
 - azure
-description: "This sample is a basic mock-up for a call center app that takes a customer's spoken request, converts it to text, translates it to English (if necessary), gauges the emotion behind the text, and then parses it for key phrases."
-urlFragment: cognitive-services-csharp-call-center
+description: "Mock-up of a call center app. Take a customer's request, convert it to text, translate it, gauge the emotion behind the text, and parse key phrases."
+urlFragment: call-center-first-contact-sample
 ---
 
 # Call Center First Contact
